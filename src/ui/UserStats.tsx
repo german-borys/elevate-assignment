@@ -2,7 +2,6 @@ import type { UserSkillsSummary } from "@/types";
 import { skillsColors } from "@/utils";
 
 export default function UserStats({ skills }: { skills: UserSkillsSummary }) {
-  console.log("Uskillser: '", skills);
   return (
     <div className="profile-stats">
       {Object.keys(skills).map((key, idx) => {
