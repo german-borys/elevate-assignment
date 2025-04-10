@@ -1,10 +1,16 @@
+"use client";
+import { use } from "react";
 import { User } from "@/types";
 
 import Image from "next/image";
 import UserStats from "./UserStats";
 
-export default function UserProfile({ user }: { user: User | undefined }) {
-  console.log("User: '", user);
+export default function UserProfile({
+  user: userProp,
+}: {
+  user: Promise<User | undefined>;
+}) {
+  const user = use(userProp);
   return (
     <div className="profile-wrapper">
       <div className="profile-info">

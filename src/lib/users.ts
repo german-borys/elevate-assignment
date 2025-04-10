@@ -1,5 +1,4 @@
 import type { User } from "@/types";
-
 // Authentication
 const baseUrl = 'https://interviews-accounts.elevateapp.com/api/ui/users';
 const reqParams = `?authentication_user_id=${process.env.USER_ID}&authentication_token=${process.env.AUTH_TOKEN}`
