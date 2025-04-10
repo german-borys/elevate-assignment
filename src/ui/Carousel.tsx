@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, Fragment } from "react";
+import { useState, useRef, Fragment } from "react";
 import type { User } from "@/types";
 import Image from "next/image";
 import UserStats from "./UserStats";
@@ -9,12 +9,6 @@ export default function Carousel({ users }: { users: User[] }) {
   const [activeUser, setActiveUser] = useState<string | number | null>();
 
   const ref = useRef(null);
-
-  useEffect(() => {
-    if (!activeUser && users.length > 0) {
-      setActiveUser(users[0].id);
-    }
-  }, [activeUser, users]);
 
   const handleOnMouseEnter = (
     e: React.MouseEvent<HTMLElement>,
@@ -31,8 +25,6 @@ export default function Carousel({ users }: { users: User[] }) {
     setActiveUser(null);
   };
 
-  console.log("Active user: ", activeUser);
-
   return users && users.length > 0 ? (
     <Fragment>
       <h1>Carousel</h1>
@@ -48,14 +40,16 @@ export default function Carousel({ users }: { users: User[] }) {
               onMouseLeave={(e) => handleOnMouseLeave(e)}
             >
               <div className="flex flex-col w-full">
-                <div className="flex">
-                  {user?.image && (
+                <div className="flex items-center">
+                  {user?.image ? (
                     <Image
                       alt="avatar"
-                      width={isActive ? 75 : 50}
-                      height={isActive ? 75 : 50}
+                      width="50"
+                      height="50"
                       src={`data:image/jpg;base64,${user.image}`}
                     />
+                  ) : (
+                    <div className="missing-avatar" />
                   )}
                   {getName(user.first_name, user.last_name)}
                 </div>
