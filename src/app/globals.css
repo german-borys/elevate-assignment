@@ -24,3 +24,137 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.profile-list {
+  margin: 0 1rem;
+  width: 50%;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  height: 50%;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.carousel {
+  margin: 0 1rem;
+  width: 50%;
+}
+
+li.active-item {
+  font-size: 2rem;
+  box-shadow:
+    0 4px 8px 0 rgba(220, 202, 202, 0.2),
+    0 6px 20px 0 rgba(152, 142, 142, 0.19);
+    cursor: pointer;
+  img {
+    height: 100px;
+    width: 100px;
+    transition: all 0.1s ease;
+  }
+
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+li.profile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  img {
+
+    margin-right: 1rem;
+  }
+}
+
+.profile-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  ;
+}
+
+.profile-info {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  img {
+    margin-right: 1rem
+  }
+  h2 {
+    font-size: 1.1rem
+  }
+}
+.profile-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top:1rem;
+}
+
+.progress-bar-wrapper {
+  position: relative;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(50, 49, 53);
+  margin-bottom: 1rem;
+}
+
+.skill-progress {
+  height: 30px;
+  border-radius: 0.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: yellow;
+}
+
+.skill-name {
+  position: absolute;
+  left: 1rem;
+  color: black;
+}
+
+.navbar {
+  padding: 0.5rem 0 0.5rem 1rem;
+  a {
+    padding: 0.3rem;
+    &:hover {
+      background-color: #0f194a;
+    }
+  }
+}
+
+.missing-avatar {
+  width: 50px;
+  height: 50px;
+  background-color:  black;
+  margin-right: 1rem;
+}
+
+
+
